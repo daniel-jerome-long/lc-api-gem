@@ -11,17 +11,9 @@ module LcApi
       end
     end
     
-    class ResponseError < StandardError
-    end
-    
-    class NotFound < ResponseError
-    end
-    
-    class Forbidden < ResponseError
-    end
-    
-    class InternalServerError < ResponseError
-    end
-    
+    class ResponseError < StandardError; end
+    class NotFound < ResponseError; end
+    class Forbidden < ResponseError; end
+    class InternalServerError < ResponseError; end
   end
 end
