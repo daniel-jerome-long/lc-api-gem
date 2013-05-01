@@ -1,5 +1,6 @@
 module ErrorCodes
   
+  # http status codes (of the error variety)
   def error_code_check(response)
     case response.code.to_i
     when 400

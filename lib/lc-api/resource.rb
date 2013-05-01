@@ -37,7 +37,7 @@ module LcApi
       end
       
       def member_name
-        name.split('::').last.downcase.pluralize # pluralize from active_support/inflector
+        name.split('::').last.downcase.pluralize
       end
       
       def define_attribute_methods(attributes)

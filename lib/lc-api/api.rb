@@ -5,9 +5,9 @@ module LcApi
     class << self
       def get(uri, options)
         uri = LcApi.base_uri + uri
-        appends = ""
-        options.each { |k,v| appends << "&#{k}=#{(v.is_a?(Array) ? v.join(",") : v)}" }
-        HTTParty.get("#{uri}?key=#{LcApi.key}#{appends}")
+        opts = ""
+        options.each { |k,v| opts << "&#{k}=#{(v.is_a?(Array) ? v.join(",") : v)}" }
+        HTTParty.get("#{uri}?key=#{LcApi.key}#{opts}")
       end
     end
     
