@@ -32,6 +32,14 @@ Filter results:
 msg = LcApi::Message.find(1, :includes => [:series, speakers], :quantity => 20)
 ```
 
+Access properties from the results:
+```ruby
+msg.title
+msg.part
+msg.length
+msg.date_released
+```
+
 That's it, you're ready to rock!
 
 ## Configuration
@@ -72,6 +80,23 @@ LcApi::Message.find(1, :includes => [:series, :speakers], :quantity => 20)
 **Get all messages with includes and quantity**
 ```ruby
 LcApi::Message.all(:includes => [:series, :speakers], :quantity => 20)
+```
+
+**Access properties on a message**
+```ruby
+msg.title
+msg.part
+msg.length
+msg.date_released
+```
+
+**Access properties on a set of messages**
+```ruby
+msg = LcApi::Message.all
+msg.each do |m|
+  msg.title
+  msg.part
+end
 ```
 
 ## Resources
