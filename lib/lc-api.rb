@@ -1,4 +1,5 @@
 require 'lc-api/api'
+require 'lc-api/error_codes'
 require 'lc-api/resource'
 require 'lc-api/resource/message'
 require 'lc-api/resource/series'

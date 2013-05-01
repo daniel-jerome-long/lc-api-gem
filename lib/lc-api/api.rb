@@ -11,9 +11,17 @@ module LcApi
       end
     end
     
+    # error code response classes
     class ResponseError < StandardError; end
-    class NotFound < ResponseError; end
+    class BadRequest < ResponseError; end
+    class Unauthorized < ResponseError; end
     class Forbidden < ResponseError; end
+    class NotFound < ResponseError; end
+    class Gone < ResponseError; end
     class InternalServerError < ResponseError; end
+    class BadGateway < ResponseError; end
+    class ServiceUnavailable < ResponseError; end
+    class GatewayTimeout < ResponseError; end
+    
   end
 end

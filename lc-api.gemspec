@@ -1,7 +1,7 @@
 Gem::Specification.new do |s|
   s.name = 'lc-api'
-  s.version = '0.8.8'
-  s.date = '2013-04-30'
+  s.version = '0.9.3'
+  s.date = '2013-05-01'
   s.summary = 'LC API'
   s.description = 'A Ruby wrapper for the Lifechurch.tv REST API'
   s.authors = ["Daniel Long", "Scott Lesser"]
@@ -9,6 +9,7 @@ Gem::Specification.new do |s|
   s.files = [
     'lib/lc-api.rb', 
     'lib/lc-api/api.rb', 
+    'lib/lc-api/error_codes.rb',
     'lib/lc-api/resource.rb',
     'lib/lc-api/resource/category.rb',
     'lib/lc-api/resource/location.rb',

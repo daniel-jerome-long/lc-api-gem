@@ -1,14 +1,15 @@
 require 'json'
 require 'active_support/inflector'
+require_relative 'error_codes'
 
 module LcApi
   class Resource
     class << self
-      
+      include ErrorCodes
+           
       def find(id, options={})
         uri = member_name # ie 'message'
         uri += "/#{id}" if id
-        puts "uri is: #{uri}"
         parse_response(API.get(uri, options))
       end
       
@@ -18,7 +19,7 @@ module LcApi
       end
       
       def parse_response(response, multiple=false)
-        error_code_check(response)
+        error_code_check(response) # from ErrorCodes mixin
         
         # build a single record and return if there is only one resource (via ".find" method)
         return build_record(response.parsed_response) unless multiple
@@ -27,17 +28,6 @@ module LcApi
         resources = []
         response.parsed_response.each { |rec| resources.push build_record(rec) }
         return resources
-      end
-      
-      def error_code_check(response)
-        case response.code.to_i
-        when 404
-          raise LcApi::API::NotFound.new(response), "Resource was not found"
-        when 403
-          raise LcApi::API::Forbidden.new(response), "Forbidden"
-        when 500
-          raise LcApi::API::InternalServerError.new(response), "500 Internal Server error"
-        end
       end
       
       def build_record(response)
