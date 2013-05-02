@@ -16,5 +16,9 @@ module LcApi
       @base_uri || 'http://0.0.0.0:3000/v1/'
     end
     
+    def key
+      @key || "Key Not Set"
+    end
+    
   end
 end

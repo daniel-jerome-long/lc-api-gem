@@ -37,6 +37,7 @@ module LcApi
       end
       
       def member_name
+        ActiveSupport::Inflector.inflections { |inflect| inflect.irregular 'staff', 'staff' } # ovveride staff pluralizing to staffs
         name.split('::').last.downcase.pluralize
       end
       

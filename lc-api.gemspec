@@ -21,4 +21,5 @@ Gem::Specification.new do |s|
   s.homepage = 'http://rubygems.org/gems/lc-api'
   s.add_dependency('httparty', '>= 0')
   s.add_dependency('activesupport', '>= 2.2.1')
+  s.add_development_dependency('rspec', '~> 2.13.0')
 end
