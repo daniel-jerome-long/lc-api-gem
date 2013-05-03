@@ -67,6 +67,7 @@ describe LcApi::API do
     
     it "returns a staff resource if a staff resource is requested" do
       results = LcApi::API.get("staff/1", {})
+      puts results.inspect
       results.has_key?("id").should eq(true)
       results.has_key?("name").should eq(true)
       results.has_key?("role").should eq(true)
@@ -76,8 +77,9 @@ describe LcApi::API do
     end
     
     it "returns speakers and series with a messages resource if that is requested" do
-      results = LcApi::API.get("messages/1", {:includes => [:speakers, :series]})
-      # test includes here (once it is implemented)
+      results = LcApi::API.get("messages/1", {:include => [:speaker, :series]})
+      results.has_key?("speaker").should eq(true)
+      results.has_key?("series").should eq(true)
     end
   end
 

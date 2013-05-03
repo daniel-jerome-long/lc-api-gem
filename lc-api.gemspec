@@ -1,6 +1,6 @@
 Gem::Specification.new do |s|
   s.name = 'lc-api'
-  s.version = '0.9.4'
+  s.version = '0.9.6'
   s.date = '2013-05-01'
   s.summary = 'LC API'
   s.description = 'A Ruby wrapper for the Lifechurch.tv REST API'
