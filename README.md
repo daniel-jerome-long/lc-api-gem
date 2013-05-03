@@ -29,7 +29,7 @@ msg = LcApi::Message.all
 Filter results:
 
 ```ruby
-msg = LcApi::Message.find(1, :includes => [:series, speakers], :quantity => 20)
+msg = LcApi::Message.find(1, :include => [:series, :speaker], :quantity => 20)
 ```
 
 Access properties from the results:
@@ -68,18 +68,18 @@ LcApi::Message.all
 **Get a message and include series and speakers**
 
 ```ruby
-LcApi::Message.find(1, :includes => [:series, :speakers])
+LcApi::Message.find(1, :include => [:series, :speaker])
 ```
 
 **Get a message with includes and quantity**
 
 ```ruby
-LcApi::Message.find(1, :includes => [:series, :speakers], :quantity => 20)
+LcApi::Message.find(1, :include => [:series, :speaker], :quantity => 20)
 ```
 
 **Get all messages with includes and quantity**
 ```ruby
-LcApi::Message.all(:includes => [:series, :speakers], :quantity => 20)
+LcApi::Message.all(:includes => [:series, :speaker], :quantity => 20)
 ```
 
 **Access properties on a message**
