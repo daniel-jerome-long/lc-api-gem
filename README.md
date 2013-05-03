@@ -71,15 +71,15 @@ LcApi::Message.all
 LcApi::Message.find(1, :include => [:series, :speaker])
 ```
 
-**Get a message with includes and quantity**
+**Get a message with include and quantity**
 
 ```ruby
 LcApi::Message.find(1, :include => [:series, :speaker], :quantity => 20)
 ```
 
-**Get all messages with includes and quantity**
+**Get all messages with include and quantity**
 ```ruby
-LcApi::Message.all(:includes => [:series, :speaker], :quantity => 20)
+LcApi::Message.all(:include => [:series, :speaker], :quantity => 20)
 ```
 
 **Access properties on a message**
