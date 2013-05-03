@@ -112,15 +112,15 @@ end
 
 ***Include***
 
-	include=speaker,series
+	:include => [speaker,series]
 
 ***Quantity*** (for Message and Series only)
 
-	quantity=5
+	:quantity => 5
 
 ***Page*** (for Message and Series only)
 
-	page=2
+	:page => 2
 
 ## Coming Soon
 * Link to API homepage
